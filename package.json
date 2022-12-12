@@ -2,6 +2,9 @@
   "name": "electron-project",
   "version": "0.1.0",
   "private": true,
+  "productName": "This is the Electron project",
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,6 +18,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-electron": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "package": "electron-builder build --mac --win -c.extraMetadata.main=build/electron.js --publish never",
+    "publish": "electron-builder build --mac --win --publish always",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,5 +49,34 @@
     "electron-builder": "^23.6.0",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"
+  },
+  "build": {
+    "mac": {
+        "publish": {
+            "provider": "github",
+            "owner": "Github Owner",
+            "repo": "Repository Name",
+            "private": true,
+            "token": ""
+        }
+    },
+    "win": {
+        "publish": {
+            "provider": "github",
+            "owner": "Github Owner",
+            "repo": "Repository Name",
+            "private": true,
+            "token": ""
+        }
+    },
+    "files": [
+        "build/**/*",
+        "node_modules/**/*"
+    ],
+    "publish": {
+        "provider": "github",
+        "private": true,
+        "owner": "Github Owner"
+    }
   }
 }
