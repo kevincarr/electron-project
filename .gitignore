@@ -10,6 +10,10 @@
 
 # production
 /build
+/dist
+
+# working files
+/_workingFiles
 
 # misc
 .DS_Store
