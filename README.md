@@ -1,3 +1,13 @@
+# Electron project
+
+## DEPENDENCIES USED
+- react
+- react-dom
+- react-router-dom
+- tailwindcss
+- styled-components
+  - npm install --save styled-components
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
